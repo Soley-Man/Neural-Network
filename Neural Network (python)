@@ -1,0 +1,34 @@
+import numpy as np
+
+def sigmoid(x):
+    return 1/(1+np.exp(-x))
+
+#settings
+inpSize = 2
+hidSize = 3
+outSize = 1
+
+W1 = np.random.rand(inpSize,hidSize)
+W2 = np.random.rand(hidSize,outSize)
+
+inp = np.array([[2,3],[5,6]])
+tar = np.array([[5],[11]])
+
+#forward propagation
+def f():
+    global hid
+    global out
+    hid = sigmoid(np.dot(inp,W1))
+    out = np.dot(hid,W2)
+    return out
+
+
+#backpropagation
+def b():
+    global err
+    global cost
+    global W1
+    global W2
+    err = tar-out
+    cost = sum(1/2*err**2)
+    return cost
