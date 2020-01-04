@@ -1,3 +1,3 @@
 # Neural-Network
 A neural network with structure and forward propagation. Still working on the backpropagation...
--- adding a comment
+-- adding a comment..
